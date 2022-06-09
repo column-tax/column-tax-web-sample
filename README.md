@@ -1,4 +1,4 @@
-# Column Module Web app
+# Column Module Web Application
 
 See the full documentation here: https://docs.columntax.com/
 
@@ -38,4 +38,4 @@ The `example.html` file contains a simple html page that opens the Column Tax SD
 it will then pass to Column's SDK.
 
 ### Starting The Sample Web Application
-Open `example.html` in your browser of choiceassets
+Open `example.html` in your browser of choice.
