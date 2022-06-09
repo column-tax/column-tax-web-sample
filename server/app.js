@@ -6,12 +6,15 @@ const port = 3003
 
 app.use(cors())
 
-// The client id and secret provided by column tax
+// The client id and secret provided by column tax. These keys should only exist in the
+// backend for security purposes. Do not use put these in any frontend applications.
 const clientId = '<client_id>'
 const clientSecret = '<client_secret>'
 
 const columnUrl = "https://sandbox.columnapi.com/v1/users"
 
+// An endpoint to retrieve a user token from column tax. This token will be used in the
+// frontend application to open to column tax SDK.
 app.get('/token', (req, res) => {
     let apiKey = `${clientId}:${clientSecret}`;
     let auth = Buffer.from(apiKey).toString('base64')
