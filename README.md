@@ -11,7 +11,7 @@ of a customer application will have the following relationship.
 3. The customer's backend passes this token to their frontend application
 4. The customer's frontend application opens Column's SDK with the token.
 
-![Column Tax Architecture Diagram](images/column-architecture-diagram.png)
+![Column Tax Architecture Diagram](images/integration.png)
 
 
 ## Sample Backend Application
@@ -21,7 +21,9 @@ returning the user token.
 
 ### Starting The Sample Backend
 Requirements:
-- Update these values in `app.js` with your Column Tax client id and secret key
+- Update these values in `app.js` with your Column Tax client id and secret key. The client id and secret key should
+**not** be exposed in the frontend application for security purposes. Please keep these keys in the backend 
+application only.
 ```javascript
 const clientId = '<client_id>'
 const clientSecret = '<client_secret>'

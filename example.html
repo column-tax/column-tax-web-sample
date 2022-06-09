@@ -11,6 +11,7 @@
 
     <script>
         function startFiling() {
+            // Get the token from the sample server
             fetch("http://localhost:3003/token")
                 .then(res => res.json())
                 .then(data => {
