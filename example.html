@@ -16,13 +16,10 @@
                 .then(data => {
                     const token = data["token"]
 
-                    let param_string = JSON.stringify({token: token});
-                    let params = btoa(param_string);
-
                     // Open the Column Tax module with these configs
                     ColumnTax.openModule({
-                        // Required: the user token
-                        token: params,
+                        // Required: the token to authenticate the user
+                        token: token,
 
                         // Required: the environment, one of "sandbox" or "production"
                         environment: "sandbox",
