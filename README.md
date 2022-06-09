@@ -21,9 +21,9 @@ returning the user token.
 
 ### Starting The Sample Backend
 Requirements:
-- Update these values in `app.js` with your Column Tax client id and secret key. The client id and secret key should
-**not** be exposed in the frontend application for security purposes. Please keep these keys in the backend 
-application only.
+- Update these values in `app.js` with your Column Tax client id and secret key. This sample app is only for 
+illustration purposes. Do not share your client id and secret key in any frontend application and do not check 
+them into version control. Please keep these keys in the backend application only.
 ```javascript
 const clientId = '<client_id>'
 const clientSecret = '<client_secret>'
