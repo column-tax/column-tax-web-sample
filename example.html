@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <!-- Load Column Tax js-->
+    <script src="https://app.columnapi.com/column-tax.js"></script>
+
+    <script>
+        function startFiling() {
+            fetch("http://localhost:3003/token")
+                .then(res => res.json())
+                .then(data => {
+                    const token = data["token"]
+
+                    let param_string = JSON.stringify({token: token});
+                    let params = btoa(param_string);
+
+                    // Open the Column Tax module with these configs
+                    ColumnTax.openModule({
+                        // Required: the user token
+                        token: params,
+
+                        // Required: the environment, one of "sandbox" or "production"
+                        environment: "sandbox",
+
+                        // Optional: onClose callback
+                        onClose: () => {
+                            console.log("Closed Column Tax module");
+                        },
+                    });
+
+                })
+        }
+    </script>
+</head>
+
+<body style="padding: 30px">
+<h1>Hello!</h1>
+
+<!-- Open Column Tax module any time after the js has been loaded -->
+<button onClick="startFiling()">Start filing</button>
+</body>
+</html>
