@@ -11,7 +11,7 @@ app.use(cors())
 const clientId = '<client_id>'
 const clientSecret = '<client_secret>'
 
-const columnUrl = "https://sandbox.columnapi.com/v1/users"
+const columnUrl = "https://sandbox.columnapi.com/v1/exp/initialize_tax_filing"
 
 // An endpoint to retrieve a user token from column tax. This token will be used in the
 // frontend application to open to column tax SDK.

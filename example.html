@@ -29,6 +29,11 @@
                         onClose: () => {
                             console.log("Closed Column Tax module");
                         },
+
+                        // Optional: handle user events
+                        onUserEvent: (userEvent) => {
+                          console.log(`User performed ${userEvent.name} with metadata ${JSON.stringify(userEvent.metadata)}`);
+                        }
                     });
 
                 })
