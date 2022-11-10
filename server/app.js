@@ -13,19 +13,19 @@ const clientSecret = '<client_secret>'
 
 const columnUrl = "https://sandbox.columnapi.com/v1/exp/initialize_tax_filing"
 
-// An endpoint to retrieve a user token from column tax. This token will be used in the
+// An endpoint to retrieve a user url from column tax. This url will be used in the
 // frontend application to open to column tax SDK.
 app.get('/token', (req, res) => {
     let apiKey = `${clientId}:${clientSecret}`;
     let auth = Buffer.from(apiKey).toString('base64')
 
     // An example user with mock data
-    let user = {
+    let data = {
         user_identifier: "unique_user_identifier",
-        email: "test@test.com",
+        user: { email: "test@test.com" },
     }
 
-    const body = JSON.stringify(user)
+    const body = JSON.stringify(data)
 
     const headers = {
         Authorization: `Basic ${auth}`,
@@ -34,7 +34,7 @@ app.get('/token', (req, res) => {
 
     axios.post(columnUrl, body, {headers})
         .then((body) => {
-            res.json({"token": body.data["user_token"]})
+            res.json({ "userUrl": body.data["user_url"] })
         })
         .catch((error) => {
             res.send("Bad API Keys or Wrong URL")

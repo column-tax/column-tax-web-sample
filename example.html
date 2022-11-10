@@ -11,19 +11,16 @@
 
     <script>
         function startFiling() {
-            // Get the token from the sample server
+            // Get the filing URL from the sample server
             fetch("http://localhost:3003/token")
                 .then(res => res.json())
                 .then(data => {
-                    const token = data["token"]
+                    const userUrl = data["userUrl"]
 
                     // Open the Column Tax module with these configs
                     ColumnTax.openModule({
-                        // Required: the token to authenticate the user
-                        token: token,
-
-                        // Required: the environment, one of "sandbox" or "production"
-                        environment: "sandbox",
+                        // Required: the filing url generated for the user
+                        userUrl: userUrl,
 
                         // Optional: onClose callback
                         onClose: () => {
