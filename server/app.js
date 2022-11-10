@@ -13,8 +13,8 @@ const clientSecret = '<client_secret>'
 
 const columnUrl = "https://sandbox.columnapi.com/v1/exp/initialize_tax_filing"
 
-// An endpoint to retrieve a user url from column tax. This url will be used in the
-// frontend application to open to column tax SDK.
+// An endpoint to retrieve a user url from Column Tax. This url will be used in the
+// frontend application to open to Column Tax SDK.
 app.get('/token', (req, res) => {
     let apiKey = `${clientId}:${clientSecret}`;
     let auth = Buffer.from(apiKey).toString('base64')
